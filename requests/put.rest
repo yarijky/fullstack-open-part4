@@ -1,0 +1,32 @@
+###
+PUT http://127.0.0.1:3001/api/blogs/65e09dc030b434055385601d HTTP/1.1 
+content-type: application/json
+
+{
+  "title": "This is my first blogpost",
+  "author": "Yari is my name",
+  "url": "I dont't have an url",
+  "likes": 10
+}
+
+###
+PUT http://127.0.0.1:3001/api/blogs/65e09e3630b4340553856020 HTTP/1.1 
+content-type: application/json
+
+{
+  "title": "This is my second blogpost",
+  "author": "Luca is my name",
+  "url": "I dont't have an url",
+  "likes": 20
+}
+
+###
+PUT http://127.0.0.1:3001/api/blogs/65e09e4830b4340553856022 HTTP/1.1 
+content-type: application/json
+
+{
+  "title": "This is my third blogpost",
+  "author": "Chri is my name",
+  "url": "I dont't have an url",
+  "likes": 30
+}
