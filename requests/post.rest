@@ -1,13 +1,13 @@
 ### 
 POST http://127.0.0.1:3001/api/blogs HTTP/1.1 
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inlhcmlqa3kiLCJpZCI6IjY1ZTZkOTBlMWM1ZTkzYThjMWY0ZGY2YyIsImlhdCI6MTcwOTgyMjg5M30.EE0z69rh6gZ4HmccMkfmtrOwfj1OCgPxTS7rup2pXMM
 
 {
   "title": "This is my first blogpost",
   "author": "Yari is my name",
   "url": "I dont't have an url",
-  "likes": 10,
-  "userId": "65e6d90e1c5e93a8c1f4df6c"
+  "likes": 10
 }
 
 ### 

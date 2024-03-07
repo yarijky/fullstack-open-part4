@@ -17,3 +17,13 @@ content-type: application/json
   "name": "yari",
   "password": "yarijky"
 }
+
+###
+POST http://127.0.0.1:3001/api/users HTTP/1.1 
+content-type: application/json
+
+{
+  "username": "yorro9",
+  "name": "luca",
+  "password": "yorro9"
+}
