@@ -6,7 +6,8 @@ content-type: application/json
   "title": "This is my first blogpost",
   "author": "Yari is my name",
   "url": "I dont't have an url",
-  "likes": 90
+  "likes": 10,
+  "userId": "65e6d90e1c5e93a8c1f4df6c"
 }
 
 ### 
@@ -17,7 +18,8 @@ content-type: application/json
   "title": "This is my second blogpost",
   "author": "Luca is my name",
   "url": "I dont't have an url",
-  "likes": 10
+  "likes": 20,
+  "userId": "65e6d90e1c5e93a8c1f4df6c"
 }
 
 ### 
@@ -28,7 +30,8 @@ content-type: application/json
   "title": "This is my third blogpost",
   "author": "Chri is my name",
   "url": "I dont't have an url",
-  "likes": 30
+  "likes": 30,
+  "userId": "65e6d90e1c5e93a8c1f4df6c"
 }
 
 ### 
@@ -39,5 +42,6 @@ content-type: application/json
   "title": "This is THE ONE to delete",
   "author": "THE ONE is my name",
   "url": "I dont't have an url",
-  "likes": 0
+  "likes": 0,
+  "userId": "65e6d8b51c5e93a8c1f4df6a"
 }

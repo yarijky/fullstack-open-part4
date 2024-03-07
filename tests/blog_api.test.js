@@ -6,7 +6,6 @@ const helper = require("./test_helper");
 const app = require("../app");
 const api = supertest(app);
 const Blog = require("../models/blog");
-const blogsRouter = require("express").Router();
 
 const isPropertyDefined = (response, property) => {
   bool = false;
@@ -18,7 +17,7 @@ const isPropertyDefined = (response, property) => {
   return bool;
 };
 
-describe("when there is initially some notes saved", () => {
+describe("when there is initially some blogs saved", () => {
   beforeEach(async () => {
     await Blog.deleteMany({});
     for (let blog of helper.initialBlogs) {
@@ -46,7 +45,7 @@ describe("when there is initially some notes saved", () => {
     assert(title.includes("React patterns"));
   });
 
-  describe("viewing a specific note", () => {
+  describe("viewing a specific blog", () => {
     test("succeeds with a valid id", async () => {
       const blogsAtStart = await helper.blogsInDb();
       const blogToView = blogsAtStart[0];
@@ -58,7 +57,7 @@ describe("when there is initially some notes saved", () => {
       assert.deepStrictEqual(resultBlog.body, blogToView);
     });
 
-    test("fails with statuscode 404 if note does not exist", async () => {
+    test("fails with statuscode 404 if blog does not exist", async () => {
       const validNonexistingId = await helper.nonExistingId();
 
       await api.get(`/api/blogs/${validNonexistingId}`).expect(404);
@@ -149,33 +148,6 @@ describe("when there is initially some notes saved", () => {
       const title = blogsAtEnd.map((n) => n.title);
       assert(title.includes("React patterns"));
     });
-
-    // test("a blog has likes property, otherwise it will be set as 0", async () => {
-    //   const initialBlogs = await helper.blogsInDb();
-
-    //   if (!isPropertyDefined(initialBlogs, "likes")) {
-    //     initialBlogs.forEach(async (blog) => {
-    //       const updatedBlog = {
-    //         title: blog.title,
-    //         author: blog.author,
-    //         url: blog.url,
-    //         likes: 0,
-    //       };
-
-    //       await api
-    //         .put(`/api/blogs/${blog.id}`)
-    //         .send(updatedBlog)
-    //         .expect(200)
-    //         .expect("Content-Type", /application\/json/);
-
-    //       const blogsAtEnd = await helper.blogsInDb();
-    //       assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length);
-
-    //       const title = blogsAtEnd.map((n) => n.id);
-    //       assert(title.includes(blog.id));
-    //     });
-    //   }
-    // });
   });
 
   describe("other", () => {
@@ -185,6 +157,7 @@ describe("when there is initially some notes saved", () => {
     });
   });
 });
+
 after(async () => {
   await mongoose.connection.close();
 });
